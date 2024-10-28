@@ -14,6 +14,7 @@ public class Category {
 
     private String name;
     private CategoryType type;
+    private String diao;
 
     public Category() {
     }
