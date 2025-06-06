@@ -32,4 +32,9 @@ public class CategoryController {
         return new ResponseEntity<Category>(categoryService.saveCategory(category), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Category>> deleteCategory (@PathVariable Long id) {
+        return new ResponseEntity<List<Category>>(categoryService.deleteCategory(id), HttpStatus.OK);
+    }
+
 }
