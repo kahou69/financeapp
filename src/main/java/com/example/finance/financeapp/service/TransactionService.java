@@ -3,16 +3,17 @@ package com.example.finance.financeapp.service;
 import com.example.finance.financeapp.model.Category;
 import com.example.finance.financeapp.model.Transaction;
 import com.example.finance.financeapp.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TransactionService {
 
-    @Autowired
-    private TransactionRepository transactionRepository;
+    private final TransactionRepository transactionRepository;
 
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
