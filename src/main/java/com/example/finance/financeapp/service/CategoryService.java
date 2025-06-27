@@ -4,19 +4,19 @@ import com.example.finance.financeapp.model.Category;
 import com.example.finance.financeapp.model.CategoryType;
 import com.example.finance.financeapp.repository.CategoryRepository;
 import com.example.finance.financeapp.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CategoryService {
 
-    @Autowired
-    private CategoryRepository categoryRepository;
+    private final CategoryRepository categoryRepository;
+    private final TransactionRepository transactionRepository;
 
-    @Autowired
-    private TransactionRepository transactionRepository;
 
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();
