@@ -12,8 +12,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Transaction {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "trx_id")
     private Long id;
 
     private String description;
